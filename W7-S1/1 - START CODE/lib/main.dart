@@ -3,18 +3,33 @@ import 'quiz_app.dart';
 import 'model/quiz.dart';
 
 void main() {
+  runApp(const MyApp());
+}
 
-  Question q1 = const Question(
-      title: "Who is the best teacher?",
-      possibleAnswers: ["ronan", "hongly", 'leangsiv'],
-      goodAnswer: 'ronan');
-  Question q2 = const Question(
-      title: "Which color is the best?",
-      possibleAnswers: ["blue", "red", 'green'],
-      goodAnswer: 'red');
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  List<Question> myQuestions = [q1, q2];
-  Quiz myQuiz = Quiz(title: "Crazy Quizz", questions: myQuestions);
+  @override
+  Widget build(BuildContext context) {
+    final List<Question> questions = [
+      const Question(
+        title: "Who is the best teacher?",
+        possibleAnswers: ["Ronan", "Hongly", "Leangsiv"],
+        goodAnswer: "Ronan",
+      ),
+      const Question(
+        title: "Which color is the best?",
+        possibleAnswers: ["Blue", "Red", "Green"],
+        goodAnswer: "Red",
+      ),
+    ];
 
-  runApp(QuizApp(myQuiz));
+    final Quiz quiz = Quiz(title: "Crazy Quiz", questions: questions);
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: QuizApp(quiz),
+    );
+  }
 }
