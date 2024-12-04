@@ -22,6 +22,18 @@ class MyApp extends StatelessWidget {
         possibleAnswers: ["Blue", "Red", "Green"],
         goodAnswer: "Red",
       ),
+
+      const Question(
+        title: "Where is you from?",
+        possibleAnswers: ["Cambodia", "USA", "UK"],
+        goodAnswer: "Cambodia",
+      ),
+      const Question(
+        title: "Do you love me?",
+        possibleAnswers: ["Yes", "No", "A&B"],
+        goodAnswer: "Yes",
+      ),
+
     ];
 
     final Quiz quiz = Quiz(title: "Crazy Quiz", questions: questions);
